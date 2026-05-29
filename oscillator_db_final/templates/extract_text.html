@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Paste paper text for Local AI extraction</h2>
+  <p class="muted">This avoids bad PDF text extraction. For difficult papers, paste the abstract plus paragraphs/tables around the mechanical frequency, Q, linewidth, and temperature.</p>
+  <p><strong>Local AI:</strong> {% if llm_enabled %}enabled ({{ model }}){% else %}not enabled — fallback extractor only{% endif %}</p>
+  <form method="post">
+    <label>Paper text</label>
+    <textarea name="paper_text" rows="22" placeholder="Paste paper text here"></textarea>
+    <button type="submit">Extract from pasted text</button>
+  </form>
+</section>
+{% endblock %}

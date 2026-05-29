@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Extraction debug</h2>
+  <p class="muted">Use this when values are missing. It shows the saved JSON and the beginning of the text extracted from the upload.</p>
+  <h3>Saved extraction JSON</h3>
+  <pre>{{ r.extraction_json | jsonpretty }}</pre>
+  <h3>Extracted source text preview</h3>
+  <pre>{{ upload_text }}</pre>
+</section>
+{% endblock %}
